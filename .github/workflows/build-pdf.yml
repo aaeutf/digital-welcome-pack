@@ -2,17 +2,13 @@ name: Build LaTeX PDF
 
 on:
   push:
-    paths:
-      - 'main.tex'
-      - 'chapters/**'
-      - '.github/workflows/build-pdf.yml'
-      - 'images/**'
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
   pull_request:
-    paths:
-      - 'main.tex'
-      - 'chapters/**'
-      - '.github/workflows/build-pdf.yml'
-      - 'images/**'
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   build:
