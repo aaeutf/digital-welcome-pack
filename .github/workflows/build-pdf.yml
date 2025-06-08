@@ -1,0 +1,39 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up TeX Live
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages: >
+            scheme-medium
+            xetex
+            ctex
+            latexmk
+            cases
+            fandol
+
+      - name: Compile main.tex to PDF
+        run: |
+          latexmk -xelatex -interaction=nonstopmode -file-line-error -pdf main.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: digital-welcome-pack-pdf
+          path: main.pdf
