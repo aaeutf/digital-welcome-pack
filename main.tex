@@ -1,0 +1,98 @@
+\documentclass[UTF8]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\fancyhf{}
+
+\usepackage[misc]{ifsym}
+
+\newgeometry{margin=1in}
+\newcommand\titleofdoc{\bfseries 法国清华校友会 数字迎新包}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+   
+        \vspace{4 cm} 
+        
+        {\includegraphics[width=0.2\textwidth]{Logo.jpg}}\\
+
+        \vspace{0.5 cm} 
+        
+        \noindent\rule[0.25\baselineskip]{\textwidth}{1pt}
+        
+        \vspace{0.5 cm} 
+        
+        \Huge{\titleofdoc} 
+
+        \vspace{0.5cm}
+        
+        \LARGE{留学法国自助指南 第5版}
+        
+        \vspace{1 cm} 
+        
+        \noindent\rule[0.25\baselineskip]{\textwidth}{1pt}\\
+        
+        \vspace{1 cm}
+
+        \large{\textbf{编辑：} 刁彩潇，陈远，康嘉，张凌睿，蔡长浩}\\
+
+        \vspace{0.3 cm}
+
+        \large{\textbf{更新日期：} 2024年7月19日}\\
+
+        \vspace{1 cm}
+
+        \large{扫码关注校友会的微信公众号，不要错过每一次活动！}\\
+
+        \vspace{0.5 cm} 
+        
+        {\includegraphics[width=0.2\textwidth]{QRcode.png}}\\
+
+        \vspace{1 cm} 
+
+        \large{\textbf{写在前面：}建议刚到法国的校友\href{https://www.helloasso.com/associations/association-des-anciens-eleves-de-l-universite-tsi/adhesions/adhesion-2024-2025}{注册法国清华校友会2024-2025年度会员}（学生免费）。会员可以免费或低价参加校友会组织的各类活动及会议，并收到协会内部的信息（理事会会议记录、校友大会报告等）。}
+      
+    \end{center}
+\setcounter{page}{0}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\fancyhead[C]{法国清华大学校友会\href{https://www.tsinghua-france.org/}{(AAEUTF)} \href{mailto:contact@tsinghua-france.org}{\textrm{\Letter} Email }}
+\fancyfoot[C]{\thepage}
+
+\newpage
+\input{chapters/01_luggage.tex}
+
+\newpage
+\input{chapters/02_france_intro.tex}
+
+\newpage
+\input{chapters/03_accommodation.tex}
+
+\newpage
+\input{chapters/04_registration.tex}
+
+\newpage
+\input{chapters/05_admin.tex}
+
+\newpage
+\input{chapters/06_life.tex}
+
+\newpage
+\input{chapters/07_safety.tex}
+
+\newpage
+\input{chapters/08_links.tex}
+
+\end{document}
