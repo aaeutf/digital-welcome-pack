@@ -25,6 +25,8 @@ jobs:
             xetex
             ctex
             latexmk
+            cases
+            fandol
 
       - name: Compile main.tex to PDF
         run: |
