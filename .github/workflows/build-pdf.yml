@@ -1,0 +1,41 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    paths:
+      - 'main.tex'
+      - 'chapters/**'
+      - '.github/workflows/build-pdf.yml'
+      - 'images/**'
+  pull_request:
+    paths:
+      - 'main.tex'
+      - 'chapters/**'
+      - '.github/workflows/build-pdf.yml'
+      - 'images/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up TeX Live
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages: >
+            scheme-medium
+            xetex
+            ctex
+            latexmk
+
+      - name: Compile main.tex to PDF
+        run: |
+          latexmk -xelatex -interaction=nonstopmode -file-line-error -pdf main.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: digital-welcome-pack-pdf
+          path: main.pdf
